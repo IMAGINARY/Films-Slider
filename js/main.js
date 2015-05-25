@@ -93,10 +93,10 @@ $(document).ready(function() {
     setTimeout( function () { $('.slide').equalHeights(); }, 2000 );
 
     $(".slide").each(function(){
-        var headline = $(this).find("h1").first().clone();
+        var headline = $(this).find("h1").eq(1).clone(); // BUG. Fix language selection!!  //$(this).find("h1").first().clone();
+            // eq(x) where x is:  0 = English, 1 = French, 2 = Korean
         headline.appendTo($(this));
         console.log(headline);
-
 
         $(this).click(function(){
             var myid = makeid();
